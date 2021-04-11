@@ -1,0 +1,20 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const { Client, MessageEmbed } = require('discord.js');
+const db = require('megadb'); //Definimos db
+let blacklist = new db.crearDB('blacklist');
+
+module.exports = {
+  name: "", 
+  aliases: [""], 
+  description: '',
+
+run: async (client, message, args) => {
+
+if(blacklist.tiene(message.author.id)) return message.channel.send('**❌ | No puedes usar este comando, estás en la blacklist!**')
+
+    
+
+  
+ }
+}
